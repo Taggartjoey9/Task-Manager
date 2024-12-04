@@ -39,4 +39,9 @@ body {
     font-weight: 500;
     font-style: normal;
     cursor: pointer;
+        
+}
+
+.side-content button:hover {
+    background-color: #3b3b3b;
 }
