@@ -1,7 +1,10 @@
+import { forwardRef } from "react"
+
 // eslint-disable-next-line react/prop-types
-export default function Inputs({ label, textarea, ...props }) {
+const Input = forwardRef(function Inputs({ label, textarea, ...props }, ref ) {
     return <p>
         <label>{label}</label>
-        {textarea ? <textarea {...props}/> : <input {...props} />}
+        {textarea ? <textarea ref={ref} {...props}/> : <input ref={ref} {...props} />}
     </p>
-}
+})
+export default Input;

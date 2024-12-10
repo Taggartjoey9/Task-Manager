@@ -20,10 +20,25 @@ function App() {
     })
 }
 
+  function handleAddProject(projectData) {
+    setProjectState((prevState) => {
+      const newProject = {
+        ...projectData,
+        id: Math.random()
+      };
+
+      return {
+        ...prevState,
+        projects: [...prevState.projects, newProject]
+      }
+
+    })
+  }
+
 let content;
 
 if (projectState.selectedProjectID === null) {
-  content = <Projects />
+  content = <Projects onAdd={handleAddProject}/>
 } else if (projectState.selectedProjectID === undefined) {
   content = <FallBackCont  onStartProject={handleNewProject}/>
 }

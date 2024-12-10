@@ -1,16 +1,34 @@
-
+import { useRef } from "react"
 import Inputs from "./Inputs.jsx"
-export default function Projects() {
+
+export default function Projects({ onAdd }) {
+
+    const title = useRef();
+    const description = useRef();
+    const dueDate = useRef();
+    
+    function handleSave() {
+        const enteredTitle = title.current.value;
+        const enteredDescription = description.current.value;
+        const enteredDueDate = dueDate.current.value;
+
+        onAdd({
+            title: enteredTitle,
+            description: enteredDescription,
+            dueDate: enteredDueDate
+        });
+    }
+
     return (
         <div>
             <menu>
                 <li><button>Cancel</button></li>
-                <li><button>Save</button></li>
+                <li><button onClick={handleSave}>Save</button></li>
             </menu>
             <div>
-                <Inputs label='Title'/>
-                <Inputs label='Description' textarea />
-                <Inputs label='Due Date' />
+                <Inputs type="text "ref={title} label='Title'/>
+                <Inputs ref={description} label='Description' textarea />
+                <Inputs type="date" ref={dueDate} label='Due Date' />
             </div>
         </div>
     )
