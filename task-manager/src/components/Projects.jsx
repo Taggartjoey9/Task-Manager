@@ -21,11 +21,11 @@ export default function Projects({ onAdd }) {
 
     return (
         <div>
-            <menu>
+            <menu className="project-buttons">
                 <li><button>Cancel</button></li>
                 <li><button onClick={handleSave}>Save</button></li>
             </menu>
-            <div>
+            <div className="input-container">
                 <Inputs type="text "ref={title} label='Title'/>
                 <Inputs ref={description} label='Description' textarea />
                 <Inputs type="date" ref={dueDate} label='Due Date' />

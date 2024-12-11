@@ -54,3 +54,21 @@ img {
     width: 95px;
     height: 95px;
 }
+
+.input-container {
+    background-color: blue;
+    
+}
+
+.project-buttons {
+    display: flex;
+    justify-content: right;
+    padding: 5px;
+    margin-right: 2px;
+    list-style: none;
+}
+
+.project-buttons li {
+    margin: 5px;
+    border-radius: 20px;
+}
